@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ICTS is an inter-university research center developing transdisciplinary research on complex contemporary problems.">
+  <meta property="og:title" content="ICTS — International Center for Transdisciplinary Studies">
+  <meta property="og:description" content="An inter-university research center developing transdisciplinary research where different perspectives interact to produce knowledge.">
+  <meta property="og:type" content="website">
+  <title>ICTS — International Center for Transdisciplinary Studies</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Map — D3 stipple */
+    #icts-map {
+      position: relative;
+      width: 100%;
+      margin-top: 2rem;
+      background: #0A0A0A;
+      border: 1px solid #1E1E1E;
+      overflow: hidden;
+    }
+    #icts-map svg { display: block; width: 100%; }
+
+    /* Pulsing ring on founding-member markers */
+    @keyframes map-pulse {
+      0%   { r: 7px; opacity: 0.7; }
+      70%  { r: 14px; opacity: 0; }
+      100% { r: 14px; opacity: 0; }
+    }
+    .marker-pulse { animation: map-pulse 2.4s ease-out infinite; }
+
+    /* Tooltip */
+    #map-tooltip {
+      position: absolute;
+      pointer-events: none;
+      background: #111;
+      border: 1px solid #C8A534;
+      padding: 10px 14px;
+      display: none;
+      z-index: 10;
+      max-width: 220px;
+    }
+    #map-tooltip .tip-role {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #C8A534;
+      margin-bottom: 3px;
+    }
+    #map-tooltip .tip-name {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 0.95rem;
+      color: #F2EFE8;
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+    #map-tooltip .tip-loc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      color: #6A6760;
+    }
+
+    /* Legend */
+    .map-legend {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 0.75rem;
+      padding: 0 0.25rem;
+    }
+    .map-legend__item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: #6A6760;
+    }
+    .map-legend__dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .map-legend__dot--founding { background: #C8A534; box-shadow: 0 0 6px rgba(200,165,52,0.5); }
+    .map-legend__dot--affiliated { background: #4A3C18; border: 1px solid #7A6420; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__logo">
+        <span class="site-nav__logo-mark">ICTS</span>
+        <span class="site-nav__logo-name">International Center for Transdisciplinary Studies</span>
+      </a>
+      <ul class="site-nav__links" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="governance.html">Governance</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero__eyebrow">Inter-university research center</p>
+        <h1 class="hero__title">International Center for <em>Transdisciplinary</em> Studies</h1>
+        <p class="hero__tagline">The International Center for Transdisciplinary Studies (ICTS) is an inter-university research center that promotes a relational transdisciplinary approach to the study of complex contemporary challenges. By bringing together scholars, institutions, and diverse fields of knowledge, ICTS advances research, education, and international scientific cooperation.</p>
+        <div class="hero__cta">
+          <a href="research.html" class="btn-primary">Research Units</a>
+          <a href="about.html" class="btn-ghost">About the Center →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Units -->
+    <section class="section">
+      <div class="container">
+        <p class="section__eyebrow">§ Research</p>
+        <h2 class="section__title">Six problem-oriented environments.</h2>
+        <p class="section__lead">Each unit addresses a distinct domain of inquiry while remaining open to the others. Researchers regularly work across units.</p>
+        <div class="unit-grid">
+          <a href="research/logos.html" class="unit-card">
+            <h3 class="unit-card__name">LOGOS</h3>
+            <p class="unit-card__fullname">History of Christianity and Christian Thought</p>
+            <p class="unit-card__desc">Historical development of Christianity and Christian thought across cultural, philosophical, and institutional contexts.</p>
+            <span class="unit-card__link">Enter unit →</span>
+          </a>
+          <a href="research/raise.html" class="unit-card">
+            <h3 class="unit-card__name">RAISE</h3>
+            <p class="unit-card__fullname">Responsible AI and Social Ethics</p>
+            <p class="unit-card__desc">Responsibility in AI-driven societies, where agency is distributed across human and artificial actors.</p>
+            <span class="unit-card__link">Enter unit →</span>
+          </a>
+          <a href="research/ci2.html" class="unit-card">
+            <h3 class="unit-card__name">CI²</h3>
+            <p class="unit-card__fullname">Complexity &amp; Information Initiative</p>
+            <p class="unit-card__desc">How information, cognition, and agency emerge in complex systems — from quantum computers to a unified relational framework for knowledge.</p>
+            <span class="unit-card__link">Enter unit →</span>
+          </a>
+          <a href="research/prism.html" class="unit-card">
+            <h3 class="unit-card__name">PRISM</h3>
+            <p class="unit-card__fullname">Peace, Risk, and International Security &amp; Mediation</p>
+            <p class="unit-card__desc">Conflict, security, and diplomacy through mediation, trust-building, and relational approaches.</p>
+            <span class="unit-card__link">Enter unit →</span>
+          </a>
+          <a href="research/fraternitas.html" class="unit-card">
+            <h3 class="unit-card__name">FRATERNITAS</h3>
+            <p class="unit-card__fullname">Fraternity, Politics, and Social Theory</p>
+            <p class="unit-card__desc">Fraternity as a foundational category for political thought and democratic life in interconnected societies.</p>
+            <span class="unit-card__link">Enter unit →</span>
+          </a>
+          <a href="research/oikos.html" class="unit-card">
+            <h3 class="unit-card__name">OIKOS</h3>
+            <p class="unit-card__fullname">Family, Generations &amp; Communion (CISVF)</p>
+            <p class="unit-card__desc">Family life as a complex, intergenerational, and intercultural reality in dialogue with international networks.</p>
+            <span class="unit-card__link">Enter unit →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest -->
+    <section class="section section-alt">
+      <div class="container">
+        <p class="section__eyebrow">§ Latest</p>
+        <h2 class="section__title">News &amp; activities.</h2>
+        <div class="news-grid">
+          <div class="news-card">
+            <span class="news-card__type">Announcement</span>
+            <span class="news-card__date">2024</span>
+            <h3 class="news-card__title">ICTS officially launched at Sophia University Institute</h3>
+            <p class="news-card__desc">The International Center for Transdisciplinary Studies has been formally established at the Sophia University Institute, with the aim of developing research on complex problems that require multiple perspectives.</p>
+            <a href="https://www.sophiauniversity.org/it/news/nasce-linternational-center-for-transdisciplinary-studies/" class="cta-link" target="_blank" rel="noopener">Read announcement →</a>
+          </div>
+          <div class="news-card">
+            <span class="news-card__type">Colloquium</span>
+            <span class="news-card__date">12 May 2026</span>
+            <h3 class="news-card__title">The Digital Oath — Second International Colloquium</h3>
+            <p class="news-card__desc">Three days of plenary lectures and working groups bringing together philosophers, AI researchers, jurists, and policymakers around the second draft of the Oath. Loppiano · Sophia University Institute.</p>
+            <a href="activities.html" class="cta-link">Full programme →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Orientation -->
+    <section class="statement-block">
+      <div class="container">
+        <div class="statement-block__inner">
+          <h2 class="statement-block__heading">We study what becomes visible when different perspectives are brought into relation.</h2>
+          <div class="statement-block__body">
+            <p>Disciplines remain essential. Transdisciplinarity, for us, is a way of working when no single framework is sufficient — when a phenomenon can only be described by holding several approaches together, without flattening the differences between them.</p>
+            <p style="margin-top:var(--sp-6);">To think transdisciplinarily is to refuse the false choice between fragmentation and uniformity. It is to seek complex unity — a unity that does not erase difference but orders it.</p>
+            <p style="margin-top:var(--sp-8);"><a href="about.html" class="cta-link">The Center's orientation →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Network -->
+    <section class="section">
+      <div class="container">
+        <p class="section__eyebrow">§ Network</p>
+        <h2 class="section__title">An inter-university consortium.</h2>
+        <p class="section__lead">ICTS was established by two founding institutions and has grown to include affiliated members across Europe and Latin America.</p>
+
+        <!-- Map -->
+        <div id="icts-map" aria-label="Map showing ICTS member institutions">
+          <div id="map-tooltip">
+            <div class="tip-role"></div>
+            <div class="tip-name"></div>
+            <div class="tip-loc"></div>
+          </div>
+        </div>
+        <!-- Institution list -->
+        <ul class="institution-list" role="list">
+          <li class="institution-row">
+            <span class="institution-row__role">Founding</span>
+            <a href="https://www.sophiauniversity.org" class="institution-row__name" target="_blank" rel="noopener">Sophia University Institute</a>
+            <span class="institution-row__location">Loppiano · Italy</span>
+          </li>
+          <li class="institution-row">
+            <span class="institution-row__role">Founding</span>
+            <a href="https://www.asces.edu.br" class="institution-row__name" target="_blank" rel="noopener">ASCES-UNITA</a>
+            <span class="institution-row__location">Caruaru · Brazil</span>
+          </li>
+          <li class="institution-row">
+            <span class="institution-row__role">Affiliated</span>
+            <a href="https://www.unisabana.edu.co" class="institution-row__name" target="_blank" rel="noopener">Universidad de La Sabana</a>
+            <span class="institution-row__location">Chía · Colombia</span>
+          </li>
+          <li class="institution-row">
+            <span class="institution-row__role">Affiliated</span>
+            <a href="https://www.uc.cl" class="institution-row__name" target="_blank" rel="noopener">Pontificia Universidad Católica de Chile</a>
+            <span class="institution-row__location">Santiago · Chile</span>
+          </li>
+          <li class="institution-row">
+            <span class="institution-row__role">Affiliated</span>
+            <a href="https://www.unipg.it" class="institution-row__name" target="_blank" rel="noopener">Università degli Studi di Perugia</a>
+            <span class="institution-row__location">Perugia · Italy</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <div>
+          <span class="site-footer__brand-mark">ICTS</span>
+          <p class="site-footer__tagline">Knowledge does not belong to disciplines. It emerges in the relations that traverse them.</p>
+        </div>
+        <div>
+          <p class="site-footer__col-label">Index</p>
+          <ul class="site-footer__links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="site-footer__col-label">Correspondence</p>
+          <address class="site-footer__address">
+            Sophia University Institute<br>
+            Via San Vito 28<br>
+            50064 Loppiano (FI) · Italy<br>
+            <a href="mailto:icts@sophiauniversity.org">icts@sophiauniversity.org</a>
+          </address>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">© 2026 · ICTS · Sophia University Institute</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson@3.0.2/dist/topojson.min.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    var institutions = [
+      { lat: 43.7217, lng: 11.3581,  role: 'Founding member', name: 'Sophia University Institute',             location: 'Loppiano · Italy',    founding: true  },
+      { lat: -8.2760, lng: -35.9769, role: 'Founding member', name: 'ASCES-UNITA',                             location: 'Caruaru · Brazil',     founding: true  },
+      { lat:  4.8635, lng: -74.0368, role: 'Affiliated',      name: 'Universidad de La Sabana',                location: 'Chía · Colombia',      founding: false },
+      { lat: -33.457, lng: -70.648,  role: 'Affiliated',      name: 'Pontificia Universidad Católica de Chile',location: 'Santiago · Chile',     founding: false },
+      { lat: 43.1107, lng: 12.3908,  role: 'Affiliated',      name: 'Università degli Studi di Perugia',       location: 'Perugia · Italy',      founding: false }
+    ];
+
+    /* Countries to highlight (ISO numeric) */
+    var highlighted = new Set(['380','076','170','152','336']);
+
+    var container = document.getElementById('icts-map');
+    var tooltip   = document.getElementById('map-tooltip');
+    var W = container.clientWidth || 960;
+    var H = Math.round(W * 0.46);
+
+    var svg = d3.select('#icts-map').append('svg')
+      .attr('viewBox', '0 0 ' + W + ' ' + H)
+      .attr('preserveAspectRatio', 'xMidYMid meet');
+
+    /* ── Defs: noise filter + dot patterns ── */
+    var defs = svg.append('defs');
+
+    /* Subtle grain/noise overlay */
+    var filter = defs.append('filter').attr('id', 'grain').attr('x','0%').attr('y','0%').attr('width','100%').attr('height','100%');
+    filter.append('feTurbulence').attr('type','fractalNoise').attr('baseFrequency','0.72').attr('numOctaves','4').attr('stitchTiles','stitch').attr('result','noise');
+    filter.append('feColorMatrix').attr('type','saturate').attr('values','0').attr('in','noise').attr('result','grey');
+    filter.append('feBlend').attr('in','SourceGraphic').attr('in2','grey').attr('mode','multiply');
+
+    /* Stipple pattern — all countries */
+    var pat = defs.append('pattern').attr('id','stipple').attr('width',5).attr('height',5).attr('patternUnits','userSpaceOnUse');
+    pat.append('circle').attr('cx',1.2).attr('cy',1.2).attr('r',0.7).attr('fill','#282420');
+
+    /* Stipple pattern — highlighted countries */
+    var patH = defs.append('pattern').attr('id','stipple-hi').attr('width',5).attr('height',5).attr('patternUnits','userSpaceOnUse');
+    patH.append('circle').attr('cx',1.2).attr('cy',1.2).attr('r',0.7).attr('fill','#3A3020');
+
+    /* Glow for gold markers */
+    var glow = defs.append('filter').attr('id','glow').attr('x','-80%').attr('y','-80%').attr('width','260%').attr('height','260%');
+    glow.append('feGaussianBlur').attr('in','SourceGraphic').attr('stdDeviation','3').attr('result','blur');
+    var feMerge = glow.append('feMerge');
+    feMerge.append('feMergeNode').attr('in','blur');
+    feMerge.append('feMergeNode').attr('in','SourceGraphic');
+
+    /* ── Projection — Natural Earth ── */
+    var projection = d3.geoNaturalEarth1()
+      .scale(W / 6.2)
+      .translate([W / 2, H / 2 + H * 0.04]);
+
+    var path = d3.geoPath().projection(projection);
+
+    /* ── Draw sphere (ocean) ── */
+    svg.append('path')
+      .datum({type:'Sphere'})
+      .attr('d', path)
+      .attr('fill', '#0A0A0A');
+
+    /* ── Load world data and draw ── */
+    d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(function (world) {
+
+      var countries = topojson.feature(world, world.objects.countries);
+
+      /* Country fills */
+      svg.append('g').selectAll('path')
+        .data(countries.features)
+        .join('path')
+        .attr('d', path)
+        .attr('fill', function (d) {
+          return highlighted.has(String(d.id)) ? 'url(#stipple-hi)' : 'url(#stipple)';
+        })
+        .attr('stroke', '#0A0A0A')
+        .attr('stroke-width', 0.4);
+
+      /* Country borders */
+      svg.append('path')
+        .datum(topojson.mesh(world, world.objects.countries, function (a, b) { return a !== b; }))
+        .attr('d', path)
+        .attr('fill', 'none')
+        .attr('stroke', '#1A1814')
+        .attr('stroke-width', 0.5);
+
+      /* Grain overlay rect */
+      svg.append('rect')
+        .attr('width', W).attr('height', H)
+        .attr('fill', 'transparent')
+        .attr('filter', 'url(#grain)')
+        .attr('opacity', 0.08)
+        .attr('pointer-events', 'none');
+
+      /* ── Institution markers ── */
+      institutions.forEach(function (inst) {
+        var coords = projection([inst.lng, inst.lat]);
+        if (!coords) return;
+        var x = coords[0], y = coords[1];
+        var g = svg.append('g').attr('class', 'marker').attr('transform', 'translate(' + x + ',' + y + ')').attr('cursor', 'pointer');
+
+        if (inst.founding) {
+          /* Pulsing halo */
+          g.append('circle').attr('class','marker-pulse').attr('r', 7).attr('fill','none').attr('stroke','#C8A534').attr('stroke-width', 1).attr('opacity', 0.7);
+          /* Outer ring */
+          g.append('circle').attr('r', 7).attr('fill','none').attr('stroke','#C8A534').attr('stroke-width', 0.8).attr('opacity', 0.35);
+          /* Core */
+          g.append('circle').attr('r', 4).attr('fill','#C8A534').attr('filter','url(#glow)');
+          g.append('circle').attr('r', 2.5).attr('fill','#F0D870');
+        } else {
+          g.append('circle').attr('r', 3.5).attr('fill','#2A2010').attr('stroke','#7A6420').attr('stroke-width', 1.2);
+          g.append('circle').attr('r', 1.8).attr('fill','#C8A534').attr('opacity', 0.7);
+        }
+
+        /* Tooltip behaviour */
+        g.on('mouseenter', function (event) {
+          tooltip.style.display = 'block';
+          tooltip.querySelector('.tip-role').textContent = inst.role;
+          tooltip.querySelector('.tip-name').textContent = inst.name;
+          tooltip.querySelector('.tip-loc').textContent  = inst.location;
+          positionTooltip(event);
+        })
+        .on('mousemove', positionTooltip)
+        .on('mouseleave', function () { tooltip.style.display = 'none'; });
+      });
+
+    }).catch(function () {
+      /* Fallback: no map data */
+      svg.append('text')
+        .attr('x', W / 2).attr('y', H / 2)
+        .attr('text-anchor','middle')
+        .attr('fill','#504E4A')
+        .attr('font-family','Inter,sans-serif')
+        .attr('font-size', 13)
+        .text('Map requires an internet connection.');
+    });
+
+    function positionTooltip(event) {
+      var rect = container.getBoundingClientRect();
+      var mx = event.clientX - rect.left + 14;
+      var my = event.clientY - rect.top  - 10;
+      if (mx + 220 > W) mx = mx - 240;
+      tooltip.style.left = mx + 'px';
+      tooltip.style.top  = my + 'px';
+    }
+
+  })();
+  </script>
+</body>
+</html>
