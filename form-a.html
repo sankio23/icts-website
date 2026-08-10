@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apply for membership as a researcher associated with an ICTS Research Unit or Research Group.">
+  <title>Model A — Individual membership · ICTS</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+</head>
+<body>
+
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__logo" aria-label="ICTS — International Center for Transdisciplinary Studies">
+        <img class="site-nav__logo-lockup" src="logo-lockup.svg" alt="ICTS — International Center for Transdisciplinary Studies" width="200" height="41">
+      </a>
+      <ul class="site-nav__links" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="activities.html">Programme</a></li>
+        <li><a href="governance.html">Governance</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <header class="page-header">
+      <div class="container">
+        <p class="page-header__eyebrow">Model A</p>
+        <h1 class="page-header__title">Admission <em>Application.</em></h1>
+        <p class="page-header__lead">Apply for membership as a researcher associated with one of the Center's Research Units or Research Groups, pursuant to Art. 8 of the Center's Regulations.</p>
+      </div>
+    </header>
+
+    <section class="section section--form">
+      <div class="container">
+        <div class="form-page">
+
+          <!-- BACKEND: Google Apps Script Web App
+               Deploy ICTS_FormBackend.txt (as .gs) and paste the Web App URL in BACKEND_URL below -->
+          <form id="form-a" action="#" method="POST" novalidate>
+
+            <!-- Section 1 -->
+            <div class="form-section">
+              <p class="form-section__label">1 · Applicant information</p>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="a-name">Full name</label>
+                  <input class="form-input" type="text" id="a-name" name="full_name" required placeholder="Given name · Family name">
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="a-role">Academic position</label>
+                  <input class="form-input" type="text" id="a-role" name="position" required placeholder="e.g. Associate Professor, PhD Candidate…">
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="a-institution">University / Research Institution</label>
+                  <input class="form-input" type="text" id="a-institution" name="institution" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="a-dept">Department / Faculty</label>
+                  <input class="form-input" type="text" id="a-dept" name="department" placeholder="If applicable">
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="a-email">Institutional email</label>
+                  <input class="form-input" type="email" id="a-email" name="email" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="a-nationality">Nationality</label>
+                  <input class="form-input" type="text" id="a-nationality" name="nationality" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="form-section">
+              <p class="form-section__label">2 · Research structure</p>
+              <div class="form-grid">
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="a-unit">Selected Research Unit, Group or Initiative</label>
+                  <select class="form-select" id="a-unit" name="research_unit" required>
+                    <option value="" disabled selected>— select —</option>
+                    <optgroup label="Research Units">
+                      <option>RAISE — Responsible AI and Social Ethics</option>
+                      <option>CI² — Complexity and Information Initiative</option>
+                      <option>CeC — Christianity and Culture</option>
+                    </optgroup>
+                    <optgroup label="Research Groups">
+                      <option>FRATERNITAS — Fraternity, Politics and Social Theory</option>
+                      <option>CHARIS — Charismatic Processes, Institutions and Social Transformation</option>
+                      <option>PDM — Peace, Diplomacy and Conflict Mediation</option>
+                      <option>CARE — Health, Care and Conceptions of the Human Person</option>
+                    </optgroup>
+                    <optgroup label="Strategic Research Initiatives">
+                      <option>Human Development and New Relational Paradigms</option>
+                      <option>Family, Generations and Communion</option>
+                      <option>Civil Economy and the Economy of Communion</option>
+                    </optgroup>
+                    <option>Other (specify below)</option>
+                  </select>
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label" for="a-unit-other">If "Other", specify name and location</label>
+                  <input class="form-input" type="text" id="a-unit-other" name="unit_other">
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="a-motivation">Motivation for the affiliation request</label>
+                  <span class="form-hint">Describe your research interests and their alignment with the goals of the selected structure.</span>
+                  <textarea class="form-textarea" id="a-motivation" name="motivation" required style="min-height:160px;"></textarea>
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label" for="a-profile">Academic profile link</label>
+                  <span class="form-hint">ORCID, institutional page, Academia.edu…</span>
+                  <input class="form-input" type="url" id="a-profile" name="profile_url" placeholder="https://…">
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="form-section">
+              <p class="form-section__label">3 · Declarations</p>
+              <div class="form-field">
+                <div class="form-checks">
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_framework" required>
+                    <span class="form-check__text">I have read the Framework Agreement for the establishment of ICTS (Sophia University Institute – ASCES-UNITA).</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_regulations" required>
+                    <span class="form-check__text">I have read the Regulations of the Center.</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_gdpr" required>
+                    <span class="form-check__text">I consent to the processing of my personal data pursuant to GDPR (EU Reg. 2016/679).</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <button type="submit" class="form-submit">Submit application →</button>
+              <span class="form-status" id="a-status" aria-live="polite"></span>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <div>
+          <div class="site-footer__brand">
+            <img class="site-footer__brand-img" src="logo-lockup.svg" alt="ICTS — International Center for Transdisciplinary Studies" width="220" height="45">
+          </div>
+          <p class="site-footer__tagline">Knowledge emerges in relations — between persons, between levels of reality, between visions of the world.</p>
+        </div>
+        <div>
+          <p class="site-footer__col-label">Index</p>
+          <ul class="site-footer__links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="activities.html">Programme</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="site-footer__col-label">Correspondence</p>
+          <address class="site-footer__address">
+            Sophia University Institute<br>
+            Via San Vito 28<br>
+            50064 Incisa in Val d'Arno (FI) · Italy<br>
+            <a href="mailto:icts@sophiauniversity.org">icts@sophiauniversity.org</a>
+          </address>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">© 2026 · International Center for Transdisciplinary Studies · Founded by Sophia University Institute and ASCES-UNITA</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/config.js"></script>
+  <script>
+
+    document.getElementById('form-a').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn    = this.querySelector('.form-submit');
+      const status = document.getElementById('a-status');
+      btn.disabled = true;
+      status.textContent = 'Sending…';
+      status.className   = 'form-status';
+
+      const fd = new FormData(this);
+      const payload = {
+        formType:      'A',
+        full_name:     fd.get('full_name'),
+        position:      fd.get('position'),
+        institution:   fd.get('institution'),
+        department:    fd.get('department'),
+        email:         fd.get('email'),
+        nationality:   fd.get('nationality'),
+        research_unit: fd.get('research_unit'),
+        unit_other:    fd.get('unit_other'),
+        motivation:    fd.get('motivation'),
+        profile_url:   fd.get('profile_url')
+      };
+
+      try {
+        await fetch(BACKEND_URL, {
+          method:  'POST',
+          mode:    'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body:    JSON.stringify(payload)
+        });
+        status.textContent = 'Application received. It will be presented to the ICTS Board of Directors for deliberation (Art. 8, Regulations). You will be notified of the outcome by email.';
+        status.className   = 'form-status form-status--ok';
+        this.reset();
+      } catch {
+        status.textContent = 'Submission failed. Please write directly to icts@sophiauniversity.org.';
+        status.className   = 'form-status form-status--err';
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
