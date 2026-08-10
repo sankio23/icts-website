@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request a formal agreement or convention between your institution and ICTS.">
+  <title>Model B – Institutional Agreement · ICTS</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+</head>
+<body>
+
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__logo" aria-label="ICTS — International Center for Transdisciplinary Studies">
+        <img class="site-nav__logo-lockup" src="logo-lockup.svg" alt="ICTS — International Center for Transdisciplinary Studies" width="200" height="41">
+      </a>
+      <ul class="site-nav__links" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="activities.html">Programme</a></li>
+        <li><a href="governance.html">Governance</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <header class="page-header">
+      <div class="container">
+        <p class="page-header__eyebrow">Model B</p>
+        <h1 class="page-header__title">Institutional <em>Agreement.</em></h1>
+        <p class="page-header__lead">Request a Memorandum of Understanding between your institution and ICTS. A draft MoU will be generated automatically and sent to your Legal Representative for offline signature.</p>
+      </div>
+    </header>
+
+    <section class="section section--form">
+      <div class="container">
+        <div class="form-page">
+
+          <!-- BACKEND: Google Apps Script Web App
+               Deploy ICTS_FormBackend.txt (as .gs) and paste the Web App URL in BACKEND_URL below -->
+          <form id="form-b" action="#" method="POST" novalidate>
+
+            <!-- Section 1 -->
+            <div class="form-section">
+              <p class="form-section__label">1 · Proposing institution</p>
+              <div class="form-grid">
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="b-inst">Name of the Institution / University</label>
+                  <input class="form-input" type="text" id="b-inst" name="institution_name" required>
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label" for="b-dept">Department / Faculty (if applicable)</label>
+                  <input class="form-input" type="text" id="b-dept" name="department">
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="b-country">Country</label>
+                  <input class="form-input" type="text" id="b-country" name="institution_country" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="b-city">City</label>
+                  <input class="form-input" type="text" id="b-city" name="institution_city" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="b-legal-name">Legal Representative – name</label>
+                  <input class="form-input" type="text" id="b-legal-name" name="legal_rep_name" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="b-legal-email">Legal Representative – email</label>
+                  <input class="form-input" type="email" id="b-legal-email" name="legal_rep_email" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="form-section">
+              <p class="form-section__label">2 · Scientific contact</p>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="b-sci-name">Full name</label>
+                  <input class="form-input" type="text" id="b-sci-name" name="scientific_contact_name" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="b-sci-role">Position and role</label>
+                  <input class="form-input" type="text" id="b-sci-role" name="scientific_contact_role" required>
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="b-sci-email">Email</label>
+                  <input class="form-input" type="email" id="b-sci-email" name="scientific_contact_email" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="form-section">
+              <p class="form-section__label">3 · Research structure</p>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="b-unit-name">Name of the Research Unit or Research Group</label>
+                  <input class="form-input" type="text" id="b-unit-name" name="unit_name" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="b-unit-coord">Coordinator</label>
+                  <input class="form-input" type="text" id="b-unit-coord" name="unit_coordinator" required>
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="b-members">Members of the structure (minimum 2)</label>
+                  <span class="form-hint">Name, role, and institution of each member.</span>
+                  <textarea class="form-textarea" id="b-members" name="unit_members" required></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="form-section">
+              <p class="form-section__label">4 · Agreement</p>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="b-type">Type of agreement</label>
+                  <select class="form-select" id="b-type" name="agreement_type" required>
+                    <option value="" disabled selected>— select —</option>
+                    <option>Scientific collaboration agreement</option>
+                    <option>Framework convention</option>
+                    <option>Researcher / faculty exchange agreement</option>
+                    <option>Joint doctoral supervision agreement</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="b-duration">Expected duration</label>
+                  <input class="form-input" type="text" id="b-duration" name="agreement_duration" placeholder="e.g. 3 years, renewable">
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="b-objectives">Subject and main objectives</label>
+                  <textarea class="form-textarea" id="b-objectives" name="objectives" required style="min-height:140px;"></textarea>
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label" for="b-existing">Existing agreement with an ICTS partner university (link or reference)</label>
+                  <input class="form-input" type="text" id="b-existing" name="existing_agreement">
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="form-section">
+              <p class="form-section__label">5 · Declarations</p>
+              <div class="form-field">
+                <div class="form-checks">
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_framework" required>
+                    <span class="form-check__text">I have read the Framework Agreement for the establishment of ICTS (Sophia University Institute – ASCES-UNITA).</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_mandate" required>
+                    <span class="form-check__text">I hold the mandate to act on behalf of the proposing institution.</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_gdpr" required>
+                    <span class="form-check__text">I consent to the processing of personal data pursuant to GDPR (EU Reg. 2016/679).</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <button type="submit" class="form-submit">Generate MoU draft →</button>
+              <span class="form-status" id="b-status" aria-live="polite"></span>
+            </div>
+
+          </form>
+
+          <!-- MoU preview / print area -->
+          <div class="mou-preview" id="mou-preview">
+            <div class="mou-preview__actions">
+              <button class="form-submit" onclick="window.print()">Print / Save as PDF →</button>
+              <span style="font-family:var(--font-sans);font-size:0.78rem;color:var(--text-muted);">Print this page and sign both copies. Return one signed original to ICTS.</span>
+            </div>
+            <div class="mou-print-area" id="mou-content"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <div>
+          <div class="site-footer__brand">
+            <img class="site-footer__brand-img" src="logo-lockup.svg" alt="ICTS — International Center for Transdisciplinary Studies" width="220" height="45">
+          </div>
+          <p class="site-footer__tagline">Knowledge emerges in relations — between persons, between levels of reality, between visions of the world.</p>
+        </div>
+        <div>
+          <p class="site-footer__col-label">Index</p>
+          <ul class="site-footer__links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="activities.html">Programme</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="site-footer__col-label">Correspondence</p>
+          <address class="site-footer__address">
+            Sophia University Institute<br>
+            Via San Vito 28<br>
+            50064 Incisa in Val d'Arno (FI) · Italy<br>
+            <a href="mailto:icts@sophiauniversity.org">icts@sophiauniversity.org</a>
+          </address>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">© 2026 · International Center for Transdisciplinary Studies · Founded by Sophia University Institute and ASCES-UNITA</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/config.js"></script>
+  <script>
+    function buildMoU(d) {
+      const today = new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'});
+      return `
+        <h1>MEMORANDUM OF UNDERSTANDING</h1>
+        <p style="text-align:center;font-style:italic;">between</p>
+        <p style="text-align:center;font-weight:bold;">the International Center for Transdisciplinary Studies (ICTS)</p>
+        <p style="text-align:center;font-style:italic;">and</p>
+        <p style="text-align:center;font-weight:bold;">${d.inst}</p>
+
+        <h2>PREAMBLE</h2>
+        <p>The International Center for Transdisciplinary Studies (hereinafter "ICTS"), jointly founded in 2026 by the Sophia University Institute (Italy) and the Tabosa de Almeida ASCES-UNITA University Center (Brazil), represented herein by its Director, Prof. Marco Sanchioni;</p>
+        <p>AND <strong>${d.inst}</strong> (hereinafter the "Institution"), located in ${d.city}, ${d.country}, represented herein by its Legal Representative, <strong>${d.legalName}</strong>;</p>
+        <p><em>WHEREAS both parties share a commitment to advancing transdisciplinary research, international academic collaboration, and the promotion of scientific dialogue across disciplines and cultures;</em></p>
+        <p><strong>HAVE AGREED AS FOLLOWS:</strong></p>
+
+        <h2>Article 1 – Purpose</h2>
+        <p>The purpose of this Memorandum of Understanding (hereinafter "MoU") is to establish a framework for academic and scientific collaboration between ICTS and the Institution in the field of transdisciplinary research. The specific objectives are:</p>
+        <p>${d.objectives}</p>
+
+        <h2>Article 2 – Type of Collaboration</h2>
+        <p>The collaboration established under this MoU is of the following type: <strong>${d.type}</strong>.</p>
+        <p>The ICTS Research structure involved is: <strong>${d.unitName}</strong>, coordinated by <strong>${d.unitCoord}</strong>.</p>
+        <p>The scientific contact at the Institution is: <strong>${d.sciName}</strong>, ${d.sciRole}.</p>
+
+        <h2>Article 3 – Duration</h2>
+        <p>This MoU shall enter into force on the date of the last signature and shall remain in effect for <strong>${d.duration || '3 years'}</strong>, unless terminated earlier by either party with thirty (30) days' written notice. Upon expiration, this MoU may be renewed by mutual written agreement.</p>
+
+        <h2>Article 4 – Activities and Commitments</h2>
+        <p>Both parties agree to: (a) facilitate access to their respective academic and research resources for purposes consistent with this MoU; (b) promote joint research activities, publications, and scientific events; (c) designate the scientific contacts identified in Article 2 as responsible for coordinating joint activities; (d) inform each other promptly of any circumstances that may affect the execution of this MoU.</p>
+
+        <h2>Article 5 – Financial Provisions</h2>
+        <p>This MoU does not in itself create any financial obligation for either party. Specific financial arrangements, if any, shall be agreed upon separately in writing and attached as annexes to this MoU.</p>
+
+        <h2>Article 6 – Intellectual Property and Confidentiality</h2>
+        <p>Each party shall retain ownership of its own pre-existing intellectual property. Ownership of intellectual property arising from joint activities shall be determined by separate written agreement. Both parties agree to treat as confidential any information designated as such by the disclosing party.</p>
+
+        <h2>Article 7 – Data Protection</h2>
+        <p>Both parties agree to process personal data in compliance with applicable data protection legislation, including Regulation (EU) 2016/679 (GDPR) where applicable, and any equivalent national legislation in force in the country of the Institution.</p>
+
+        <h2>Article 8 – Governing Law and Dispute Resolution</h2>
+        <p>This MoU shall be governed by Italian law. Any dispute shall first be addressed through good-faith negotiations. Failing resolution within sixty (60) days, disputes shall be submitted to the competent court of Florence, Italy.</p>
+
+        <p><em>Done in two original copies, each equally authentic, on ___________________________.</em></p>
+
+        <table class="sig-table">
+          <tr>
+            <td><strong>For the ICTS</strong></td>
+            <td><strong>For ${d.inst}</strong></td>
+          </tr>
+          <tr>
+            <td><br><br><br>_______________________________<br>Prof. Marco Sanchioni<br>Director, ICTS<br>Sophia University Institute<br>Incisa in Val d'Arno (FI), Italy</td>
+            <td><br><br><br>_______________________________<br>${d.legalName}<br>Legal Representative<br>${d.inst}<br>${d.city}, ${d.country}</td>
+          </tr>
+          <tr>
+            <td style="padding-top:1.5em;">Date: ___________________________</td>
+            <td style="padding-top:1.5em;">Date: ___________________________</td>
+          </tr>
+        </table>
+      `;
+    }
+
+    document.getElementById('form-b').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn    = this.querySelector('.form-submit');
+      const status = document.getElementById('b-status');
+      btn.disabled = true;
+      status.textContent = 'Processing…';
+      status.className   = 'form-status';
+
+      const fd = new FormData(this);
+
+      // Payload completo per il backend
+      const payload = {
+        formType:                 'B',
+        institution_name:         fd.get('institution_name'),
+        department:               fd.get('department'),
+        institution_country:      fd.get('institution_country'),
+        institution_city:         fd.get('institution_city'),
+        legal_rep_name:           fd.get('legal_rep_name'),
+        legal_rep_email:          fd.get('legal_rep_email'),
+        scientific_contact_name:  fd.get('scientific_contact_name'),
+        scientific_contact_role:  fd.get('scientific_contact_role'),
+        scientific_contact_email: fd.get('scientific_contact_email'),
+        unit_name:                fd.get('unit_name'),
+        unit_coordinator:         fd.get('unit_coordinator'),
+        unit_members:             fd.get('unit_members'),
+        agreement_type:           fd.get('agreement_type'),
+        objectives:               fd.get('objectives'),
+        agreement_duration:       fd.get('agreement_duration'),
+        existing_agreement:       fd.get('existing_agreement')
+      };
+
+      // Subset per buildMoU (rendering client-side)
+      const d = {
+        inst:       payload.institution_name,
+        country:    payload.institution_country,
+        city:       payload.institution_city,
+        legalName:  payload.legal_rep_name,
+        sciName:    payload.scientific_contact_name,
+        sciRole:    payload.scientific_contact_role,
+        unitName:   payload.unit_name,
+        unitCoord:  payload.unit_coordinator,
+        type:       payload.agreement_type,
+        objectives: payload.objectives,
+        duration:   payload.agreement_duration
+      };
+
+      // Invia al backend (fire-and-forget — la risposta è opaca in no-cors)
+      fetch(BACKEND_URL, {
+        method:  'POST',
+        mode:    'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body:    JSON.stringify(payload)
+      }).catch(function() {});
+
+      // Genera sempre l'anteprima MoU lato client
+      document.getElementById('mou-content').innerHTML = buildMoU(d);
+      const preview = document.getElementById('mou-preview');
+      preview.classList.add('is-visible');
+      preview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      status.textContent = 'Request received and logged. The MoU draft below will be presented to the ICTS Board for approval (Art. 9). Print both copies and sign; the Director will contact you to proceed.';
+      status.className   = 'form-status form-status--ok';
+    });
+  </script>
+</body>
+</html>

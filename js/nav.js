@@ -6,6 +6,28 @@
 
   document.addEventListener('DOMContentLoaded', function () {
 
+    /* ── Logo: continuous scroll-linked shrink (lockup -> emblem) ── */
+    var siteNav = document.querySelector('.site-nav');
+    if (siteNav) {
+      var isHome = document.body.classList.contains('home');
+      var ticking = false;
+      var applyNav = function () {
+        ticking = false;
+        var NAV_END = isHome ? 240 : 130;
+        var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+        var p = y / NAV_END; p = p < 0 ? 0 : (p > 1 ? 1 : p);
+        siteNav.style.setProperty('--nav-p', p.toFixed(4));
+        siteNav.classList.toggle('is-scrolled', y > 4);
+      };
+      var onNavScroll = function () {
+        if (!ticking) { ticking = true; window.requestAnimationFrame(applyNav); }
+      };
+      applyNav();
+      window.addEventListener('scroll', onNavScroll, { passive: true });
+      window.addEventListener('resize', onNavScroll, { passive: true });
+    }
+
+
     /* ── Mobile nav toggle ── */
     var toggle = document.querySelector('.nav-toggle');
     var links  = document.querySelector('.site-nav__links');
@@ -60,6 +82,8 @@
       '.unit-nav',
       '.aside-block',
       '.about-quote',
+      '.people-section__header',
+      '.people-section__fullname',
     ].join(',');
 
     /* Containers whose children stagger */
@@ -67,6 +91,7 @@
       '.unit-grid',
       '.news-grid',
       '.institutions-grid',
+      '.person-grid',
     ].join(',');
 
     /* Eyebrow elements that animate their gold line */

@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+
+# Materiale di lavoro, non fa parte del sito
+_to_delete/
+_backup*/
+*.zip
+push-to-github.sh
+
+# Stub di redirect dalle vecchie pagine. Rimuovi queste tre righe
+# se vuoi che i redirect finiscano anche in produzione.
+research/logos.html
+research/prism.html
+research/oikos.html

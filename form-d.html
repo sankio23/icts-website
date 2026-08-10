@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apply for membership in an active ICTS Laboratory or Research Group.">
+  <title>Model D — Membership of a Research Group · ICTS</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+</head>
+<body>
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__logo" aria-label="ICTS — International Center for Transdisciplinary Studies">
+        <img class="site-nav__logo-lockup" src="logo-lockup.svg" alt="ICTS — International Center for Transdisciplinary Studies" width="200" height="41">
+      </a>
+      <ul class="site-nav__links" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="activities.html">Programme</a></li>
+        <li><a href="governance.html">Governance</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <header class="page-header">
+      <div class="container">
+        <p class="page-header__eyebrow">Model D</p>
+        <h1 class="page-header__title">Group <em>Membership.</em></h1>
+        <p class="page-header__lead">Apply for individual membership of an already constituted ICTS Research Group. Your request will be reviewed by the Group Coordinator.</p>
+      </div>
+    </header>
+
+    <section class="section section--form">
+      <div class="container">
+        <div class="form-page">
+          <!-- FORMSPREE: replace with your Form D endpoint -->
+          <form id="form-d" action="https://formspree.io/f/YOUR_FORM_D_ID" method="POST" novalidate>
+
+            <div class="form-section">
+              <p class="form-section__label">1 · Applicant</p>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="d-name">Full name</label>
+                  <input class="form-input" type="text" id="d-name" name="full_name" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="d-dob">Place and date of birth</label>
+                  <input class="form-input" type="text" id="d-dob" name="place_dob" required placeholder="City, DD Month YYYY">
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="d-nationality">Nationality</label>
+                  <input class="form-input" type="text" id="d-nationality" name="nationality" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="d-role">Academic position / Role</label>
+                  <input class="form-input" type="text" id="d-role" name="position" required placeholder="e.g. Full Professor, Researcher, PhD Student…">
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="d-institution">University / Institution</label>
+                  <input class="form-input" type="text" id="d-institution" name="institution" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="d-address">Institutional postal address</label>
+                  <input class="form-input" type="text" id="d-address" name="postal_address">
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="d-email">Institutional email</label>
+                  <input class="form-input" type="email" id="d-email" name="email" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <p class="form-section__label">2 · Target group</p>
+              <div class="form-grid">
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="d-group">Name of the Laboratory / Research Group</label>
+                  <input class="form-input" type="text" id="d-group" name="group_name" required>
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="d-coord">Coordinator (Prof.)</label>
+                  <input class="form-input" type="text" id="d-coord" name="coordinator" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <p class="form-section__label">3 · Motivation</p>
+              <div class="form-grid">
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="d-motivation">Motivation and expected scientific contribution</label>
+                  <span class="form-hint">Describe the competencies you bring and their alignment with the Group's goals.</span>
+                  <textarea class="form-textarea" id="d-motivation" name="motivation" required style="min-height:160px;"></textarea>
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label" for="d-profile">Academic profile link</label>
+                  <span class="form-hint">ORCID, institutional page, Academia.edu…</span>
+                  <input class="form-input" type="url" id="d-profile" name="profile_url" placeholder="https://…">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <p class="form-section__label">4 · Declarations</p>
+              <div class="form-field">
+                <div class="form-checks">
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_framework" required>
+                    <span class="form-check__text">I have read the ICTS Framework Agreement (Sophia University Institute – ASCES-UNITA).</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_objectives" required>
+                    <span class="form-check__text">I have read the objectives of the Laboratory / Research Group I am applying to.</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_goals" required>
+                    <span class="form-check__text">I share the scientific goals of the Laboratory / Research Group.</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_principles" required>
+                    <span class="form-check__text">I accept the principles and objectives of the ICTS.</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_gdpr" required>
+                    <span class="form-check__text">I consent to the processing of my personal data pursuant to GDPR (EU Reg. 2016/679).</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <button type="submit" class="form-submit">Submit application →</button>
+              <span class="form-status" id="d-status" aria-live="polite"></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <div>
+          <div class="site-footer__brand">
+            <img class="site-footer__brand-img" src="logo-lockup.svg" alt="ICTS — International Center for Transdisciplinary Studies" width="220" height="45">
+          </div>
+          <p class="site-footer__tagline">Knowledge emerges in relations — between persons, between levels of reality, between visions of the world.</p>
+        </div>
+        <div>
+          <p class="site-footer__col-label">Index</p>
+          <ul class="site-footer__links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="activities.html">Programme</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="site-footer__col-label">Correspondence</p>
+          <address class="site-footer__address">
+            Sophia University Institute<br>
+            Via San Vito 28<br>
+            50064 Incisa in Val d'Arno (FI) · Italy<br>
+            <a href="mailto:icts@sophiauniversity.org">icts@sophiauniversity.org</a>
+          </address>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">© 2026 · International Center for Transdisciplinary Studies · Founded by Sophia University Institute and ASCES-UNITA</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script>
+    document.getElementById('form-d').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.form-submit');
+      const status = document.getElementById('d-status');
+      btn.disabled = true; status.textContent = 'Sending…'; status.className = 'form-status';
+      try {
+        const res = await fetch(this.action, { method:'POST', body: new FormData(this), headers:{'Accept':'application/json'} });
+        if (res.ok) { status.textContent = 'Application submitted. The Group Coordinator will contact you by email.'; status.className = 'form-status form-status--ok'; this.reset(); }
+        else { throw new Error(); }
+      } catch { status.textContent = 'Submission failed. Please write to icts@sophiauniversity.org.'; status.className = 'form-status form-status--err'; btn.disabled = false; }
+    });
+  </script>
+</body>
+</html>
