@@ -94,6 +94,7 @@
         <li><a href="people.html">People</a></li>
         <li><a href="activities.html">Programme</a></li>
         <li><a href="governance.html">Governance</a></li>
+        <li><a href="partners.html">Partners</a></li>
         <li><a href="join.html">Join</a></li>
       </ul>
       <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -308,7 +309,7 @@
           </li>
           <li class="institution-row">
             <span class="institution-row__role">Associated</span>
-            <span class="institution-row__name">The AI Oath Foundation</span>
+            <span class="institution-row__name">AI Oath Institute</span>
             <span class="institution-row__location">Los Angeles · United States</span>
           </li>
           <li class="institution-row">
@@ -317,6 +318,8 @@
             <span class="institution-row__location">Nairobi · Kenya</span>
           </li>
         </ul>
+
+        <p style="margin-top:var(--sp-10);"><a class="cta-link" href="partners.html">The three capacities of institutional adherence &rarr;</a></p>
       </div>
     </section>
 
@@ -339,6 +342,7 @@
             <li><a href="people.html">People</a></li>
             <li><a href="activities.html">Programme</a></li>
             <li><a href="governance.html">Governance</a></li>
+            <li><a href="partners.html">Partners</a></li>
             <li><a href="join.html">Join</a></li>
           </ul>
         </div>
@@ -365,7 +369,7 @@
   (function () {
     'use strict';
 
-    var institutions = [{"lat": 43.6489,"lng": 11.4586,"role": "Founding university","name": "Sophia University Institute","location": "Figline e Incisa Valdarno · Italy","founding": true},{"lat": -8.276,"lng": -35.9769,"role": "Founding university","name": "Tabosa de Almeida University Center, ASCES-UNITA","location": "Caruaru, Pernambuco · Brazil","founding": true},{"lat": 43.1107,"lng": 12.3908,"role": "Associated institution","name": "University of Perugia","location": "Perugia · Italy","founding": false},{"lat": 41.9247,"lng": 12.4936,"role": "Associated institution","name": "Luiss University","location": "Rome · Italy","founding": false},{"lat": -27.6014,"lng": -48.5194,"role": "Associated institution","name": "Federal University of Santa Catarina","location": "Florianópolis · Brazil","founding": false},{"lat": -25.4278,"lng": -49.2611,"role": "Associated institution","name": "Federal University of Paraná","location": "Curitiba · Brazil","founding": false},{"lat": 46.0119,"lng": 8.9601,"role": "Associated institution","name": "USI / SUPSI","location": "Lugano · Switzerland","founding": false},{"lat": 4.8635,"lng": -74.0368,"role": "Associated institution","name": "Universidad de La Sabana","location": "Chía · Colombia","founding": false},{"lat": -33.4407,"lng": -70.6407,"role": "Associated institution","name": "Pontificia Universidad Católica de Chile","location": "Santiago · Chile","founding": false},{"lat": -34.6037,"lng": -58.3816,"role": "Associated institution","name": "CONICET","location": "Buenos Aires · Argentina","founding": false},{"lat": 43.4723,"lng": -80.5449,"role": "Associated institution","name": "University of Waterloo","location": "Waterloo · Canada","founding": false},{"lat": 1.3521,"lng": 103.8198,"role": "Associated institution","name": "Consulus","location": "Singapore · Singapore","founding": false},{"lat": 42.3601,"lng": -71.0589,"role": "Associated institution","name": "Ethos Capital","location": "Boston · United States","founding": false},{"lat": 34.0522,"lng": -118.2437,"role": "Associated institution","name": "The AI Oath Foundation","location": "Los Angeles · United States","founding": false},{"lat": -1.2921,"lng": 36.8219,"role": "Associated institution","name": "Catholic University of Eastern Africa","location": "Nairobi · Kenya","founding": false}];
+    var institutions = [{"lat": 43.6489,"lng": 11.4586,"role": "Founding university","name": "Sophia University Institute","location": "Figline e Incisa Valdarno · Italy","founding": true},{"lat": -8.276,"lng": -35.9769,"role": "Founding university","name": "Tabosa de Almeida University Center, ASCES-UNITA","location": "Caruaru, Pernambuco · Brazil","founding": true},{"lat": 43.1107,"lng": 12.3908,"role": "Associated institution","name": "University of Perugia","location": "Perugia · Italy","founding": false},{"lat": 41.9247,"lng": 12.4936,"role": "Associated institution","name": "Luiss University","location": "Rome · Italy","founding": false},{"lat": -27.6014,"lng": -48.5194,"role": "Associated institution","name": "Federal University of Santa Catarina","location": "Florianópolis · Brazil","founding": false},{"lat": -25.4278,"lng": -49.2611,"role": "Associated institution","name": "Federal University of Paraná","location": "Curitiba · Brazil","founding": false},{"lat": 46.0119,"lng": 8.9601,"role": "Associated institution","name": "USI / SUPSI","location": "Lugano · Switzerland","founding": false},{"lat": 4.8635,"lng": -74.0368,"role": "Associated institution","name": "Universidad de La Sabana","location": "Chía · Colombia","founding": false},{"lat": -33.4407,"lng": -70.6407,"role": "Associated institution","name": "Pontificia Universidad Católica de Chile","location": "Santiago · Chile","founding": false},{"lat": -34.6037,"lng": -58.3816,"role": "Associated institution","name": "CONICET","location": "Buenos Aires · Argentina","founding": false},{"lat": 43.4723,"lng": -80.5449,"role": "Associated institution","name": "University of Waterloo","location": "Waterloo · Canada","founding": false},{"lat": 1.3521,"lng": 103.8198,"role": "Associated institution","name": "Consulus","location": "Singapore · Singapore","founding": false},{"lat": 42.3601,"lng": -71.0589,"role": "Associated institution","name": "Ethos Capital","location": "Boston · United States","founding": false},{"lat": 34.0522,"lng": -118.2437,"role": "Associated institution","name": "AI Oath Institute","location": "Los Angeles · United States","founding": false},{"lat": -1.2921,"lng": 36.8219,"role": "Associated institution","name": "Catholic University of Eastern Africa","location": "Nairobi · Kenya","founding": false}];
     var highlighted = new Set(["380", "076", "756", "170", "152", "032", "124", "702", "840", "404"]);
 
     var container = document.getElementById('icts-map');
