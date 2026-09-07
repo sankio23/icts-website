@@ -129,40 +129,24 @@
                   <span class="form-hint">What you would want the collaboration to be about: shared research interests, questions, activities. This is what the Council Board reads.</span>
                   <textarea class="form-textarea" id="b-objectives" name="objectives" required style="min-height:140px;"></textarea>
                 </div>
-                <div class="form-field">
+                <div class="form-field form-grid__full">
                   <label class="form-label form-label--required" for="b-type">Form of cooperation envisaged</label>
+                  <span class="form-hint">
+                    A <em>framework convention</em> is a general umbrella agreement that opens the relationship and under which specific activities are agreed later; a <em>scientific collaboration agreement</em> covers defined joint research on an identified subject; a <em>researcher / faculty exchange agreement</em> regulates the mobility of academic staff between the two institutions; a <em>joint doctoral supervision agreement</em> covers the co-supervision of doctoral candidates.
+                    <br>If more than one applies, or you are not sure yet, choose <em>All of the above</em> — nothing here is binding and the form is settled during the discussions that follow.
+                  </span>
                   <select class="form-select" id="b-type" name="agreement_type" required>
                     <option value="" disabled selected>— select —</option>
-                    <option>Scientific collaboration agreement</option>
                     <option>Framework convention</option>
+                    <option>Scientific collaboration agreement</option>
                     <option>Researcher / faculty exchange agreement</option>
                     <option>Joint doctoral supervision agreement</option>
+                    <option>All of the above</option>
                     <option>Other</option>
                   </select>
                 </div>
-                <div class="form-field">
-                  <label class="form-label" for="b-existing-note">&nbsp;</label>
-                </div>
                 <div class="form-field form-grid__full">
-                  <p style="font-family:var(--font-sans);font-size:0.82rem;line-height:1.6;color:var(--text-muted);border-top:1px solid var(--border-light);padding-top:var(--sp-5);margin:var(--sp-3) 0 0 0;">
-                    <strong style="color:var(--text);">A research group is not required to join.</strong>
-                    Once the agreement is in place, researchers of your institution may join the Center&rsquo;s existing units and groups. If in time you wish to constitute a new research group, members propose it separately, and the Council Board may later promote an established group to the status of research unit. The fields below are optional and only for the case where you already have something in mind.
-                  </p>
-                </div>
-                <div class="form-field form-grid__full">
-                  <label class="form-label" for="b-unit-name">Working name of a research group you might propose — optional</label>
-                  <input class="form-input" type="text" id="b-unit-name" name="unit_name">
-                </div>
-                <div class="form-field">
-                  <label class="form-label" for="b-unit-coord">Its proposed coordinator — optional</label>
-                  <input class="form-input" type="text" id="b-unit-coord" name="unit_coordinator">
-                </div>
-                <div class="form-field">
-                  <label class="form-label" for="b-members">Colleagues who would take part — optional</label>
-                  <textarea class="form-textarea" id="b-members" name="unit_members"></textarea>
-                </div>
-                <div class="form-field form-grid__full">
-                  <label class="form-label" for="b-existing">Existing agreement with an ICTS partner university (link or reference)</label>
+                  <label class="form-label" for="b-existing">Existing agreement with an ICTS partner university, if any (link or reference)</label>
                   <input class="form-input" type="text" id="b-existing" name="existing_agreement">
                 </div>
               </div>
@@ -175,7 +159,7 @@
                 <div class="form-checks">
                   <label class="form-check">
                     <input type="checkbox" name="decl_framework" required>
-                    <span class="form-check__text">I have read the Regulations of the Center and the standard terms set out below.</span>
+                    <span class="form-check__text">I have read the <a href="docs/ICTS-Regulations.pdf" target="_blank" rel="noopener">Regulations of the Center</a>. The standard terms of the agreement will be sent to me with the acknowledgement of this expression of interest.</span>
                   </label>
                   <label class="form-check">
                     <input type="checkbox" name="decl_nonbinding" required>
@@ -196,14 +180,7 @@
 
           </form>
 
-          <!-- MoU preview / print area -->
-          <div class="mou-preview" id="mou-preview">
-            <div class="mou-preview__actions">
-              <button class="form-submit" onclick="window.print()">Print / Save as PDF →</button>
-              <span style="font-family:var(--font-sans);font-size:0.78rem;color:var(--text-muted);">Take this to the office that handles agreements at your institution. It is not for signature.</span>
-            </div>
-            <div class="mou-print-area" id="mou-content"></div>
-          </div>
+        </div>
 
         </div>
       </div>
@@ -250,67 +227,6 @@
   <script src="js/nav.js"></script>
   <script src="js/config.js"></script>
   <script>
-    function buildMoU(d) {
-      const today = new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'});
-      return `
-        <p style="border:1px solid #c9c4bb;padding:0.9em 1.1em;font-family:var(--font-sans);font-size:0.78rem;letter-spacing:0.09em;text-transform:uppercase;">Draft — not for signature<span style="display:block;margin-top:0.6em;text-transform:none;letter-spacing:0;font-size:0.82rem;line-height:1.55;color:#6b6660;">Standard terms, generated ${today}. This draft is subject to deliberation of the ICTS Council Board and to examination by the founding institutions. It is provided so that your institution can see what participation involves before any commitment is made.</span></p>
-
-        <h1>MEMORANDUM OF UNDERSTANDING</h1>
-        <p style="text-align:center;">between <strong>Sophia University Institute</strong>, Italy,<br>and <strong>${d.inst}</strong>, ${d.country}</p>
-        <p style="text-align:center;font-style:italic;">on academic cooperation within the International Center for Transdisciplinary Studies (ICTS)</p>
-
-        <p>Sophia University Institute (Istituto Universitario Sophia), with registered offices in Loppiano, Figline e Incisa Valdarno (FI), Italy, hereinafter &ldquo;Sophia&rdquo;, and <strong>${d.inst}</strong>${d.dept ? ', ' + d.dept : ''}, with registered offices in ${d.city === d.country ? d.city : d.city + ', ' + d.country}, hereinafter &ldquo;the Institution&rdquo;, jointly referred to as &ldquo;the Parties&rdquo;, agree as follows.</p>
-
-        <h2>Article 1 — Purpose</h2>
-        <p>Sophia hosts the administrative headquarters of the International Center for Transdisciplinary Studies, hereinafter &ldquo;ICTS&rdquo;, an inter-university research centre established in March 2026 by Sophia and Centro Universitário Tabosa de Almeida ASCES-UNITA (Brazil), and open to the participation of further academic institutions. This Memorandum establishes a framework of academic cooperation between the Parties and formalises the participation of the Institution in ICTS as an academic partner.</p>
-
-        <h2>Article 2 — Areas of cooperation</h2>
-        <p>Cooperation may include: joint research activities; participation in seminars, workshops and conferences organised by either Party; contributions to each other&rsquo;s graduate teaching programmes; joint applications to competitive research funding; co-supervision of doctoral candidates; exchange of academic staff and researchers; and joint publications.</p>
-        <p>The form of cooperation identified by the Parties is: <strong>${d.type}</strong>. The Parties have identified the following objectives:</p>
-        <p>${d.objectives}</p>
-
-        <h2>Article 3 — Participation in ICTS</h2>
-        <p>Researchers affiliated with the Institution may join existing research groups and research units of ICTS. The Institution may propose the constitution of a research group within ICTS; any such proposal is subject to the approval of the Council Board of ICTS, which may approve, decline or defer it. In accordance with the Regulations of ICTS, the Council Board may subsequently promote a research group to the status of research unit; research units are constituted by decision of the Council Board and not upon application. Participation does not affect the institutional autonomy of either Party.</p>
-        <p>The research group proposed by the Institution is: <strong>${d.unitName}</strong>, ${d.unitCoord ? 'with <strong>' + d.unitCoord + '</strong> as proposed coordinator.' : 'whose coordinator is to be designated.'}</p>
-
-        <h2>Article 4 — Implementation</h2>
-        <p>Each Party shall designate a liaison, whose name and contact details shall be notified in writing upon signature and to whom communications under this Memorandum shall be addressed. The liaison designated by the Institution is <strong>${d.sciName}</strong>, ${d.sciRole}. Specific activities shall be defined in separate written arrangements setting out their scope, duration, responsibilities and financial provisions. The liaisons shall review the activities carried out under this Memorandum at least once a year.</p>
-
-        <h2>Article 5 — General provisions</h2>
-        <ol type="a">
-          <li>This Memorandum entails no financial obligation for either Party.</li>
-          <li>This Memorandum is non-exclusive.</li>
-          <li>Nothing in this Memorandum creates an employment, agency or partnership relationship between the Parties, and neither Party may bind the other.</li>
-          <li>Each Party may identify the other as an academic partner in materials relating to ICTS. Any other use of the name, logo or trademarks of a Party, or of ICTS, requires the prior written consent of the holder. Upon termination, each Party shall remove the other from such materials within a reasonable time.</li>
-          <li>Publications resulting from joint activities shall normally acknowledge ICTS and the affiliation of their authors to their respective institutions.</li>
-          <li>Each Party retains the intellectual property it holds independently of this Memorandum. Rights over jointly generated results shall be regulated in the arrangements referred to in Article 4.</li>
-          <li>Each Party shall treat as confidential any information expressly designated as such by the other, and shall not disclose it to third parties without prior written consent, for the duration of this Memorandum and for three years thereafter.</li>
-          <li>Each Party shall comply with the data protection legislation applicable to it. Any transfer of personal data between the Parties shall be regulated in the arrangements referred to in Article 4.</li>
-          <li>Activities carried out under this Memorandum shall comply with the research ethics requirements of each Party and, where applicable, with those of ICTS.</li>
-        </ol>
-
-        <h2>Article 6 — Duration, settlement and status</h2>
-        <p>This Memorandum enters into force on the date of the last signature and remains valid for <strong>${d.duration || 'five (5) years'}</strong>, renewable by written agreement. It may be amended by written agreement of the Parties. Either Party may withdraw upon four (4) months&rsquo; written notice, without affecting activities already under way. Any difference arising from the interpretation or application of this Memorandum shall be settled amicably through consultation between the Parties. This Memorandum expresses the intention of the Parties to cooperate and does not create legally binding obligations between them, save for Articles 5 and 6, which are binding.</p>
-
-        <p><em>Executed in English, in two counterparts, which may be signed and exchanged electronically.</em></p>
-
-        <table class="sig-table">
-          <tr>
-            <td><strong>For Sophia University Institute</strong></td>
-            <td><strong>For ${d.inst}</strong></td>
-          </tr>
-          <tr>
-            <td><br><br>_______________________________<br>The Rector, or a delegate thereof<br>Sophia University Institute<br>Figline e Incisa Valdarno (FI), Italy<br><br><br>_______________________________<br>Prof. Marco Sanchioni<br>Director, ICTS &mdash; countersigned</td>
-            <td><br><br>_______________________________<br>${d.legalName ? d.legalName + '<br>' : ''}Legal Representative, or a duly authorised signatory<br>${d.inst}<br>${d.city === d.country ? d.city : d.city + ', ' + d.country}</td>
-          </tr>
-          <tr>
-            <td style="padding-top:1.5em;">Date: ___________________________</td>
-            <td style="padding-top:1.5em;">Date: ___________________________</td>
-          </tr>
-        </table>
-      `;
-    }
-
     document.getElementById('form-b').addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn    = this.querySelector('.form-submit');
@@ -334,28 +250,9 @@
         scientific_contact_name:  fd.get('scientific_contact_name'),
         scientific_contact_role:  fd.get('scientific_contact_role'),
         scientific_contact_email: fd.get('scientific_contact_email'),
-        unit_name:                fd.get('unit_name'),
-        unit_coordinator:         fd.get('unit_coordinator'),
-        unit_members:             fd.get('unit_members'),
         agreement_type:           fd.get('agreement_type'),
         objectives:               fd.get('objectives'),
         existing_agreement:       fd.get('existing_agreement')
-      };
-
-      // Subset per buildMoU (rendering client-side)
-      const d = {
-        inst:       payload.institution_name,
-        dept:       payload.department,
-        country:    payload.institution_country,
-        city:       payload.institution_city,
-        legalName:  payload.legal_rep_name,
-        sciName:    payload.scientific_contact_name,
-        sciRole:    payload.scientific_contact_role,
-        unitName:   payload.unit_name,
-        unitCoord:  payload.unit_coordinator,
-        type:       payload.agreement_type,
-        objectives: payload.objectives,
-        duration:   ''
       };
 
       // Invia al backend (fire-and-forget — la risposta è opaca in no-cors)
@@ -366,13 +263,7 @@
         body:    JSON.stringify(payload)
       }).catch(function() {});
 
-      // Genera sempre l'anteprima MoU lato client
-      document.getElementById('mou-content').innerHTML = buildMoU(d);
-      const preview = document.getElementById('mou-preview');
-      preview.classList.add('is-visible');
-      preview.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-      status.textContent = 'Request received. The standard terms are set out below for your information. The Direction of ICTS will be in touch to discuss the proposal; the agreement is then deliberated by the Council Board and examined by the founding institutions before any signature (Art. 9 of the Regulations).';
+      status.textContent = 'Expression of interest received. You will shortly receive an acknowledgement by email, with the Regulations of the Center and the standard terms of the agreement attached. The Direction of ICTS will then be in touch; the agreement is deliberated by the Council Board and examined by the founding institutions before any signature (Art. 9 of the Regulations).';
       status.className   = 'form-status form-status--ok';
     });
   </script>
