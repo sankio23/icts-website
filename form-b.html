@@ -38,7 +38,7 @@
       <div class="container">
         <p class="page-header__eyebrow">Model B</p>
         <h1 class="page-header__title">Institutional <em>Agreement.</em></h1>
-        <p class="page-header__lead">Request the participation of your institution in ICTS. The standard terms are generated below, so that you can see what participation involves before any commitment is made. Signature follows deliberation of the Council Board.</p>
+        <p class="page-header__lead">An expression of interest in bringing your institution into the Center. It commits no one: it opens a conversation. The standard terms of the agreement are set out below once you send it, so that you can take them to the office that handles agreements at your institution.</p>
       </div>
     </header>
 
@@ -52,7 +52,27 @@
 
             <!-- Section 1 -->
             <div class="form-section">
-              <p class="form-section__label">1 · Proposing institution</p>
+              <p class="form-section__label">1 · You</p>
+              <div class="form-grid">
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="b-sci-name">Full name</label>
+                  <span class="form-hint">This form is normally completed by the researcher who wishes to bring their institution into the Center, not by its legal representative.</span>
+                  <input class="form-input" type="text" id="b-sci-name" name="scientific_contact_name" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="b-sci-role">Position and role</label>
+                  <input class="form-input" type="text" id="b-sci-role" name="scientific_contact_role" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="b-sci-email">Institutional email</label>
+                  <input class="form-input" type="email" id="b-sci-email" name="scientific_contact_email" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="form-section">
+              <p class="form-section__label">2 · Your institution</p>
               <div class="form-grid">
                 <div class="form-field form-grid__full">
                   <label class="form-label form-label--required" for="b-inst">Name of the Institution / University</label>
@@ -70,63 +90,51 @@
                   <label class="form-label form-label--required" for="b-city">City</label>
                   <input class="form-input" type="text" id="b-city" name="institution_city" required>
                 </div>
-                <div class="form-field">
-                  <label class="form-label form-label--required" for="b-legal-name">Legal Representative – name</label>
-                  <input class="form-input" type="text" id="b-legal-name" name="legal_rep_name" required>
-                </div>
-                <div class="form-field">
-                  <label class="form-label form-label--required" for="b-legal-email">Legal Representative – email</label>
-                  <input class="form-input" type="email" id="b-legal-email" name="legal_rep_email" required>
-                </div>
-              </div>
-            </div>
-
-            <!-- Section 2 -->
-            <div class="form-section">
-              <p class="form-section__label">2 · Scientific contact</p>
-              <div class="form-grid">
-                <div class="form-field">
-                  <label class="form-label form-label--required" for="b-sci-name">Full name</label>
-                  <input class="form-input" type="text" id="b-sci-name" name="scientific_contact_name" required>
-                </div>
-                <div class="form-field">
-                  <label class="form-label form-label--required" for="b-sci-role">Position and role</label>
-                  <input class="form-input" type="text" id="b-sci-role" name="scientific_contact_role" required>
-                </div>
-                <div class="form-field form-grid__full">
-                  <label class="form-label form-label--required" for="b-sci-email">Email</label>
-                  <input class="form-input" type="email" id="b-sci-email" name="scientific_contact_email" required>
-                </div>
               </div>
             </div>
 
             <!-- Section 3 -->
             <div class="form-section">
-              <p class="form-section__label">3 · Proposed research group</p>
+              <p class="form-section__label">3 · Where the proposal stands</p>
               <div class="form-grid">
-                <div class="form-field">
-                  <label class="form-label form-label--required" for="b-unit-name">Name of the proposed research group</label>
-                  <span class="form-hint">Research units are constituted by the Council Board, which may promote an established research group to that status. They cannot be requested here.</span>
-                  <input class="form-input" type="text" id="b-unit-name" name="unit_name" required>
-                </div>
-                <div class="form-field">
-                  <label class="form-label form-label--required" for="b-unit-coord">Proposed coordinator</label>
-                  <input class="form-input" type="text" id="b-unit-coord" name="unit_coordinator" required>
-                </div>
                 <div class="form-field form-grid__full">
-                  <label class="form-label form-label--required" for="b-members">Members of the structure (minimum 2)</label>
-                  <span class="form-hint">Name, role, and institution of each member.</span>
-                  <textarea class="form-textarea" id="b-members" name="unit_members" required></textarea>
+                  <label class="form-label form-label--required" for="b-status">Has the proposal been raised within your institution?</label>
+                  <span class="form-hint">There is no wrong answer. It tells us whether we are at the beginning of a conversation or close to a formal step.</span>
+                  <select class="form-select" id="b-status" name="internal_status" required>
+                    <option value="" disabled selected>— select —</option>
+                    <option>Not yet — I am exploring first</option>
+                    <option>Discussed informally with colleagues or my head of department</option>
+                    <option>The office that handles international agreements is aware of it</option>
+                    <option>My institution has asked me to make this approach</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="b-legal-name">Office or person who handles agreements — if known</label>
+                  <span class="form-hint">Optional. We will not write to them without telling you first.</span>
+                  <input class="form-input" type="text" id="b-legal-name" name="legal_rep_name">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="b-legal-email">Their email — if known</label>
+                  <input class="form-input" type="email" id="b-legal-email" name="legal_rep_email">
                 </div>
               </div>
             </div>
 
             <!-- Section 4 -->
             <div class="form-section">
-              <p class="form-section__label">4 · Agreement</p>
+              <p class="form-section__label">4 · The research proposal</p>
               <div class="form-grid">
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="b-unit-name">Working name of the research group you would propose</label>
+                  <span class="form-hint">Research units are constituted by the Council Board, which may promote an established research group to that status. They cannot be requested here.</span>
+                  <input class="form-input" type="text" id="b-unit-name" name="unit_name" required>
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="b-objectives">Subject and main objectives</label>
+                  <textarea class="form-textarea" id="b-objectives" name="objectives" required style="min-height:140px;"></textarea>
+                </div>
                 <div class="form-field">
-                  <label class="form-label form-label--required" for="b-type">Type of agreement</label>
+                  <label class="form-label form-label--required" for="b-type">Form of cooperation envisaged</label>
                   <select class="form-select" id="b-type" name="agreement_type" required>
                     <option value="" disabled selected>— select —</option>
                     <option>Scientific collaboration agreement</option>
@@ -137,12 +145,13 @@
                   </select>
                 </div>
                 <div class="form-field">
-                  <label class="form-label" for="b-duration">Expected duration</label>
-                  <input class="form-input" type="text" id="b-duration" name="agreement_duration" placeholder="e.g. 3 years, renewable">
+                  <label class="form-label" for="b-unit-coord">Proposed coordinator — if identified</label>
+                  <input class="form-input" type="text" id="b-unit-coord" name="unit_coordinator">
                 </div>
                 <div class="form-field form-grid__full">
-                  <label class="form-label form-label--required" for="b-objectives">Subject and main objectives</label>
-                  <textarea class="form-textarea" id="b-objectives" name="objectives" required style="min-height:140px;"></textarea>
+                  <label class="form-label" for="b-members">Colleagues who would take part — if identified</label>
+                  <span class="form-hint">Name, role and institution of each. The Regulations require a coordinator and at least two members before the Council Board deliberates; these can be completed during the review, and need not be settled now.</span>
+                  <textarea class="form-textarea" id="b-members" name="unit_members"></textarea>
                 </div>
                 <div class="form-field form-grid__full">
                   <label class="form-label" for="b-existing">Existing agreement with an ICTS partner university (link or reference)</label>
@@ -158,11 +167,11 @@
                 <div class="form-checks">
                   <label class="form-check">
                     <input type="checkbox" name="decl_framework" required>
-                    <span class="form-check__text">I have read the Framework Agreement for the establishment of ICTS (Sophia University Institute – ASCES-UNITA).</span>
+                    <span class="form-check__text">I have read the Regulations of the Center and the standard terms set out below.</span>
                   </label>
                   <label class="form-check">
-                    <input type="checkbox" name="decl_mandate" required>
-                    <span class="form-check__text">I hold the mandate to act on behalf of the proposing institution.</span>
+                    <input type="checkbox" name="decl_nonbinding" required>
+                    <span class="form-check__text">I understand that this expression of interest commits neither my institution nor ICTS, and that any agreement is concluded with Sophia University Institute after deliberation of the Council Board.</span>
                   </label>
                   <label class="form-check">
                     <input type="checkbox" name="decl_gdpr" required>
@@ -173,7 +182,7 @@
             </div>
 
             <div class="form-footer">
-              <button type="submit" class="form-submit">Generate MoU draft →</button>
+              <button type="submit" class="form-submit">Send expression of interest →</button>
               <span class="form-status" id="b-status" aria-live="polite"></span>
             </div>
 
@@ -183,7 +192,7 @@
           <div class="mou-preview" id="mou-preview">
             <div class="mou-preview__actions">
               <button class="form-submit" onclick="window.print()">Print / Save as PDF →</button>
-              <span style="font-family:var(--font-sans);font-size:0.78rem;color:var(--text-muted);">For internal circulation within your institution. This draft is not for signature.</span>
+              <span style="font-family:var(--font-sans);font-size:0.78rem;color:var(--text-muted);">Take this to the office that handles agreements at your institution. It is not for signature.</span>
             </div>
             <div class="mou-print-area" id="mou-content"></div>
           </div>
@@ -219,7 +228,7 @@
           <address class="site-footer__address">
             Sophia University Institute<br>
             Via San Vito 28<br>
-            50064 Incisa in Val d'Arno (FI) · Italy<br>
+            50064 Figline e Incisa Valdarno (FI) · Italy<br>
             <a href="mailto:icts@sophiauniversity.org">icts@sophiauniversity.org</a>
           </address>
         </div>
@@ -254,7 +263,7 @@
 
         <h2>Article 3 — Participation in ICTS</h2>
         <p>Researchers affiliated with the Institution may join existing research groups and research units of ICTS. The Institution may propose the constitution of a research group within ICTS; any such proposal is subject to the approval of the Council Board of ICTS, which may approve, decline or defer it. In accordance with the Regulations of ICTS, the Council Board may subsequently promote a research group to the status of research unit; research units are constituted by decision of the Council Board and not upon application. Participation does not affect the institutional autonomy of either Party.</p>
-        <p>The research group proposed by the Institution is: <strong>${d.unitName}</strong>, with <strong>${d.unitCoord}</strong> as proposed coordinator.</p>
+        <p>The research group proposed by the Institution is: <strong>${d.unitName}</strong>, ${d.unitCoord ? 'with <strong>' + d.unitCoord + '</strong> as proposed coordinator.' : 'whose coordinator is to be designated.'}</p>
 
         <h2>Article 4 — Implementation</h2>
         <p>Each Party shall designate a liaison, whose name and contact details shall be notified in writing upon signature and to whom communications under this Memorandum shall be addressed. The liaison designated by the Institution is <strong>${d.sciName}</strong>, ${d.sciRole}. Specific activities shall be defined in separate written arrangements setting out their scope, duration, responsibilities and financial provisions. The liaisons shall review the activities carried out under this Memorandum at least once a year.</p>
@@ -284,7 +293,7 @@
           </tr>
           <tr>
             <td><br><br>_______________________________<br>The Rector, or a delegate thereof<br>Sophia University Institute<br>Figline e Incisa Valdarno (FI), Italy<br><br><br>_______________________________<br>Prof. Marco Sanchioni<br>Director, ICTS &mdash; countersigned</td>
-            <td><br><br>_______________________________<br>${d.legalName}<br>Legal Representative, or a duly authorised signatory<br>${d.inst}<br>${d.city === d.country ? d.city : d.city + ', ' + d.country}</td>
+            <td><br><br>_______________________________<br>${d.legalName ? d.legalName + '<br>' : ''}Legal Representative, or a duly authorised signatory<br>${d.inst}<br>${d.city === d.country ? d.city : d.city + ', ' + d.country}</td>
           </tr>
           <tr>
             <td style="padding-top:1.5em;">Date: ___________________________</td>
@@ -312,6 +321,7 @@
         institution_country:      fd.get('institution_country'),
         institution_city:         fd.get('institution_city'),
         legal_rep_name:           fd.get('legal_rep_name'),
+        internal_status:          fd.get('internal_status'),
         legal_rep_email:          fd.get('legal_rep_email'),
         scientific_contact_name:  fd.get('scientific_contact_name'),
         scientific_contact_role:  fd.get('scientific_contact_role'),
@@ -321,7 +331,6 @@
         unit_members:             fd.get('unit_members'),
         agreement_type:           fd.get('agreement_type'),
         objectives:               fd.get('objectives'),
-        agreement_duration:       fd.get('agreement_duration'),
         existing_agreement:       fd.get('existing_agreement')
       };
 
@@ -338,7 +347,7 @@
         unitCoord:  payload.unit_coordinator,
         type:       payload.agreement_type,
         objectives: payload.objectives,
-        duration:   payload.agreement_duration
+        duration:   ''
       };
 
       // Invia al backend (fire-and-forget — la risposta è opaca in no-cors)
