@@ -122,15 +122,11 @@
 
             <!-- Section 4 -->
             <div class="form-section">
-              <p class="form-section__label">4 · The research proposal</p>
+              <p class="form-section__label">4 · The cooperation</p>
               <div class="form-grid">
                 <div class="form-field form-grid__full">
-                  <label class="form-label form-label--required" for="b-unit-name">Working name of the research group you would propose</label>
-                  <span class="form-hint">Research units are constituted by the Council Board, which may promote an established research group to that status. They cannot be requested here.</span>
-                  <input class="form-input" type="text" id="b-unit-name" name="unit_name" required>
-                </div>
-                <div class="form-field form-grid__full">
-                  <label class="form-label form-label--required" for="b-objectives">Subject and main objectives</label>
+                  <label class="form-label form-label--required" for="b-objectives">Subject and main objectives of the cooperation</label>
+                  <span class="form-hint">What you would want the collaboration to be about: shared research interests, questions, activities. This is what the Council Board reads.</span>
                   <textarea class="form-textarea" id="b-objectives" name="objectives" required style="min-height:140px;"></textarea>
                 </div>
                 <div class="form-field">
@@ -145,12 +141,24 @@
                   </select>
                 </div>
                 <div class="form-field">
-                  <label class="form-label" for="b-unit-coord">Proposed coordinator — if identified</label>
-                  <input class="form-input" type="text" id="b-unit-coord" name="unit_coordinator">
+                  <label class="form-label" for="b-existing-note">&nbsp;</label>
                 </div>
                 <div class="form-field form-grid__full">
-                  <label class="form-label" for="b-members">Colleagues who would take part — if identified</label>
-                  <span class="form-hint">Name, role and institution of each. The Regulations require a coordinator and at least two members before the Council Board deliberates; these can be completed during the review, and need not be settled now.</span>
+                  <p style="font-family:var(--font-sans);font-size:0.82rem;line-height:1.6;color:var(--text-muted);border-top:1px solid var(--border-light);padding-top:var(--sp-5);margin:var(--sp-3) 0 0 0;">
+                    <strong style="color:var(--text);">A research group is not required to join.</strong>
+                    Once the agreement is in place, researchers of your institution may join the Center&rsquo;s existing units and groups. If in time you wish to constitute a new research group, members propose it separately, and the Council Board may later promote an established group to the status of research unit. The fields below are optional and only for the case where you already have something in mind.
+                  </p>
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label" for="b-unit-name">Working name of a research group you might propose — optional</label>
+                  <input class="form-input" type="text" id="b-unit-name" name="unit_name">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="b-unit-coord">Its proposed coordinator — optional</label>
+                  <input class="form-input" type="text" id="b-unit-coord" name="unit_coordinator">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="b-members">Colleagues who would take part — optional</label>
                   <textarea class="form-textarea" id="b-members" name="unit_members"></textarea>
                 </div>
                 <div class="form-field form-grid__full">
