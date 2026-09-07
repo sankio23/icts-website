@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Confirm your participation in a laboratory or research group proposed within ICTS.">
+  <title>Model D — Letter of Participation · ICTS</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+</head>
+<body>
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__logo" aria-label="ICTS — International Center for Transdisciplinary Studies">
+        <img class="site-nav__logo-lockup" src="logo-lockup.svg" alt="ICTS — International Center for Transdisciplinary Studies" width="200" height="41">
+      </a>
+      <ul class="site-nav__links" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="activities.html">Programme</a></li>
+        <li><a href="governance.html">Governance</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <header class="page-header">
+      <div class="container">
+        <p class="page-header__eyebrow">Model D</p>
+        <h1 class="page-header__title">Letter of <em>Participation.</em></h1>
+        <p class="page-header__lead">Someone has proposed a laboratory or research group and has named you among the people who would take part. This short form is your letter of participation: the coordinator gathers them and presents them to the Council Board together with the proposal (Art. 10 of the Regulations). You do not need to be a member of the Center to take part.</p>
+      </div>
+    </header>
+
+    <section class="section section--form">
+      <div class="container">
+        <div class="form-page">
+          <form id="form-d" action="#" method="POST" novalidate>
+
+            <p style="font-family:var(--font-sans);font-size:0.82rem;line-height:1.65;color:var(--text-muted);border:1px solid var(--border-light);border-left:2px solid var(--gold);padding:var(--sp-4) var(--sp-5);margin:0 0 var(--sp-7) 0;">
+              <strong style="color:var(--text);">Nothing here commits you.</strong>
+              The proposal is still a draft and the Council Board may approve, decline or defer it. Signing this letter says you are willing to take part if it goes ahead &mdash; it creates no obligation and, on its own, no membership of the Center.
+            </p>
+
+            <div class="form-section">
+              <p class="form-section__label">1 &middot; The proposal</p>
+              <div class="form-grid">
+                <div class="form-field form-grid__full">
+                  <label class="form-label form-label--required" for="d-code">Reference code</label>
+                  <span class="form-hint">The code in the coordinator&rsquo;s message, in the form <span style="font-family:var(--font-mono, monospace);">LAB-2026-007</span>. If you followed their link it is already filled in.</span>
+                  <input class="form-input" type="text" id="d-code" name="lab_code" required placeholder="LAB-2026-000" style="text-transform:uppercase;">
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label" for="d-lab">Its working name, as you know it &mdash; optional</label>
+                  <span class="form-hint">Only helps us match your letter if the code is mistyped.</span>
+                  <input class="form-input" type="text" id="d-lab" name="lab_name">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <p class="form-section__label">2 &middot; You</p>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="d-name">Full name</label>
+                  <input class="form-input" type="text" id="d-name" name="full_name" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="d-role">Position and institution</label>
+                  <input class="form-input" type="text" id="d-role" name="position" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="d-email">Email</label>
+                  <input class="form-input" type="email" id="d-email" name="email" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label form-label--required" for="d-standing">Your relation to the Center</label>
+                  <select class="form-select" id="d-standing" name="standing" required>
+                    <option value="" disabled selected>&mdash; select &mdash;</option>
+                    <option>I am a member of the Center</option>
+                    <option>I am at a partner institution but not yet a member</option>
+                    <option>I am an external collaborator</option>
+                  </select>
+                </div>
+                <div class="form-field form-grid__full">
+                  <label class="form-label" for="d-contribution">What you would contribute &mdash; optional</label>
+                  <span class="form-hint">One or two lines. Useful to the Council Board, not required.</span>
+                  <textarea class="form-textarea" id="d-contribution" name="contribution"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <p class="form-section__label">3 &middot; Declarations</p>
+              <div class="form-field">
+                <div class="form-checks">
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_participate" required>
+                    <span class="form-check__text">I am willing to take part in this laboratory or research group if the Council Board constitutes it.</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_framework" required>
+                    <span class="form-check__text">I have read <a href="docs/ICTS-Regulations.pdf" target="_blank" rel="noopener">Article 10 of the Regulations</a> and understand that taking part in a laboratory does not in itself make me a member of the Center.</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="decl_gdpr" required>
+                    <span class="form-check__text">I consent to the processing of personal data pursuant to GDPR (EU Reg. 2016/679).</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <button type="submit" class="form-submit">Send letter &rarr;</button>
+              <span class="form-status" id="d-status" aria-live="polite"></span>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <div>
+          <div class="site-footer__brand">
+            <img class="site-footer__brand-img" src="logo-lockup.svg" alt="ICTS — International Center for Transdisciplinary Studies" width="220" height="45">
+          </div>
+          <p class="site-footer__tagline">Knowledge emerges in relations — between persons, between levels of reality, between visions of the world.</p>
+        </div>
+        <div>
+          <p class="site-footer__col-label">Index</p>
+          <ul class="site-footer__links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="activities.html">Programme</a></li>
+            <li><a href="governance.html">Governance</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="site-footer__col-label">Correspondence</p>
+          <address class="site-footer__address">
+            Sophia University Institute<br>
+            Via San Vito 28<br>
+            50064 Figline e Incisa Valdarno (FI) · Italy<br>
+            <a href="mailto:icts@sophiauniversity.org">icts@sophiauniversity.org</a>
+          </address>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">© 2026 · International Center for Transdisciplinary Studies · Founded by Sophia University Institute and ASCES-UNITA</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/config.js"></script>
+  <script>
+    // Il codice arriva dal link del coordinatore: form-d.html?lab=LAB-2026-007
+    (function () {
+      var code = new URLSearchParams(location.search).get('lab');
+      if (code) document.getElementById('d-code').value = code.trim().toUpperCase();
+    })();
+
+    document.getElementById('form-d').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const btn    = this.querySelector('.form-submit');
+      const status = document.getElementById('d-status');
+      btn.disabled = true;
+      status.textContent = 'Sending\u2026';
+      status.className   = 'form-status';
+
+      const fd = new FormData(this);
+      const payload = {
+        formType:     'D',
+        lab_code:     (fd.get('lab_code') || '').trim().toUpperCase(),
+        lab_name:     fd.get('lab_name'),
+        full_name:    fd.get('full_name'),
+        position:     fd.get('position'),
+        email:        fd.get('email'),
+        standing:     fd.get('standing'),
+        contribution: fd.get('contribution')
+      };
+
+      fetch(BACKEND_URL, {
+        method:  'POST',
+        mode:    'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body:    JSON.stringify(payload)
+      }).catch(function () {});
+
+      status.textContent = 'Letter received. It has been filed with the proposal and the coordinator has been told. You will hear from the Center once the Council Board has deliberated.';
+      status.className   = 'form-status form-status--ok';
+    });
+  </script>
+</body>
+</html>
