@@ -2602,6 +2602,9 @@ strong { font-weight: 600; }
 }
 
 /* --- Join: le tre rotte, con la colonna del percorso --- */
+/* Il paragrafo ha margin-bottom: senza questo il bottone gli resta attaccato. */
+.route-item .cta-link--btn { margin-top: var(--sp-2); }
+
 .route-item { grid-template-columns: 220px 1fr 260px; }
 
 .route-steps-wrap {
